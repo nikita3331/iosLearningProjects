@@ -11,6 +11,7 @@
 		1A7933152613BFE9007C9FD3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7933142613BFE9007C9FD3 /* ContentView.swift */; };
 		1A7933172613BFEB007C9FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7933162613BFEB007C9FD3 /* Assets.xcassets */; };
 		1A79331A2613BFEB007C9FD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7933192613BFEB007C9FD3 /* Preview Assets.xcassets */; };
+		1A7933232614A023007C9FD3 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7933222614A023007C9FD3 /* WeatherButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		1A7933162613BFEB007C9FD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A7933192613BFEB007C9FD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A79331B2613BFEB007C9FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7933222614A023007C9FD3 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				1A7933122613BFE9007C9FD3 /* Weather_appApp.swift */,
 				1A7933142613BFE9007C9FD3 /* ContentView.swift */,
+				1A7933222614A023007C9FD3 /* WeatherButton.swift */,
 				1A7933162613BFEB007C9FD3 /* Assets.xcassets */,
 				1A79331B2613BFEB007C9FD3 /* Info.plist */,
 				1A7933182613BFEB007C9FD3 /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				1A7933152613BFE9007C9FD3 /* ContentView.swift in Sources */,
 				1A7933132613BFE9007C9FD3 /* Weather_appApp.swift in Sources */,
+				1A7933232614A023007C9FD3 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
