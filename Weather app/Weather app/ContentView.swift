@@ -9,18 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isNight=false
+    let forecasts:[Forecast]=[
+        Forecast(day: "MON", temp: 20, imageName: "cloud.sun.fill"),
+        Forecast(day: "TUE", temp: 21, imageName: "sun.max.fill"),
+        Forecast(day: "WED", temp: 22, imageName: "sunset.fill")
+    ]
     var body: some View {
+       
         ZStack{
             BackgroundView(isNight: $isNight)
             VStack{
                 CityName(cityName: "Cupertino")
                 CurrentWeather(iconName: "cloud.sun.fill", temperature: 31)
                 HStack(spacing:100){
-                    //do arra map for it with custom struct
                     //add API call to get weather
-                    WeatherDayView(day: "TUE", temp: 23,imageName: "cloud.sun.fill" )
-                    WeatherDayView(day: "FRI", temp: 23,imageName: "sun.max.fill" )
-                    WeatherDayView(day: "SAT", temp: 23,imageName: "sunset.fill" )
+                    ForEach(forecasts, id: \.day) {
+                        forecast in
+                            WeatherDayView(day: forecast.day, temp: forecast.temp,imageName: forecast.imageName)
+                    }
                 }
                 Spacer()
                 
