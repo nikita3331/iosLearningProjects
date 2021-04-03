@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct Weather_appApp: App {
+    @StateObject var weather = Weather()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView{
+                NavigationView{
+                    ContentView(weather:weather)
+                }.tabItem {
+                    Image(systemName:"airplane.circle.fill")
+                    Text("Discover")
+                }
+
+            }.environmentObject(weather)
         }
+        
     }
 }

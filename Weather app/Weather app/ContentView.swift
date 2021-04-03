@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isNight=false
+    let weather:Weather
     let forecasts:[Forecast]=[
         Forecast(day: "MON", temp: 20, imageName: "cloud.sun.fill"),
         Forecast(day: "TUE", temp: 21, imageName: "sun.max.fill"),
@@ -20,7 +21,7 @@ struct ContentView: View {
             BackgroundView(isNight: $isNight)
             VStack{
                 CityName(cityName: "Cupertino")
-                CurrentWeather(iconName: "cloud.sun.fill", temperature: 31)
+                CurrentWeather(iconName: "cloud.sun.fill", temperature: weather.myTemperature)
                 HStack(spacing:100){
                     //add API call to get weather
                     ForEach(forecasts, id: \.day) {
@@ -30,7 +31,11 @@ struct ContentView: View {
                 }
                 Spacer()
                 
-                CustomButton(title: "Change day time",myAction:{isNight.toggle()})
+                CustomButton(title: "Change day time",myAction:{
+                                isNight.toggle()
+                                print("pressed")
+                    weather.fetchWeather(lat: 22.22, lon: 33.33)
+                })
             }
         }
     }
@@ -38,8 +43,10 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @StateObject static var weather = Weather()
+
     static var previews: some View {
-        ContentView()
+        ContentView(weather:weather)
     }
 }
 
@@ -87,15 +94,17 @@ struct CityName: View {
 
 struct CurrentWeather: View {
     var iconName:String
-    var temperature: Int
+    var temperature: Float
     var body: some View {
+        let formatted = String(format: "%.1f", temperature)
+
         VStack(spacing:2){
             Image(systemName: iconName)
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 120)
-            Text("\(temperature)°C" )
+            Text("\(formatted)°C" )
                 .font(.system(size: 70,weight:.medium))
                 .foregroundColor(.white)
         }
