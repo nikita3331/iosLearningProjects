@@ -8,11 +8,12 @@
 import Foundation
 class Weather :ObservableObject{
 
-    var lat:Float=55.22;
-    var lon:Float=55.22;
-    @Published var myTemperature:Float=22.4;
+    var lat:Double=55.22;
+    var lon:Double=55.22;
+    @Published var myTemperature:Double=22.4;
     let apiKey="04d9dec8176e4069b9d172635210204"
-    func fetchWeather(lat:Float,lon:Float){
+    func fetchWeather(lat:Double,lon:Double){
+        print("going into weahter")
         let url = URL(string: "https://api.weatherapi.com/v1/current.json?key=\(apiKey)&q=\(lat),\(lon)&days=3&aqi=no")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -23,7 +24,7 @@ class Weather :ObservableObject{
             {
                 if var dum=values["feelslike_c"] as? NSNumber{
                     DispatchQueue.main.async {
-                        self.myTemperature=dum.floatValue
+                        self.myTemperature=dum.doubleValue
                     }
                     print(dum.floatValue)
                 }

@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State private var isNight=false
-    let weather:Weather
+struct WeatherView: View {
+    @State private var isNight=true
+//    let weather:Weather
+    @EnvironmentObject var weather: Weather
+
     let forecasts:[Forecast]=[
         Forecast(day: "MON", temp: 20, imageName: "cloud.sun.fill"),
         Forecast(day: "TUE", temp: 21, imageName: "sun.max.fill"),
@@ -31,11 +33,11 @@ struct ContentView: View {
                 }
                 Spacer()
                 
-                CustomButton(title: "Change day time",myAction:{
-                                isNight.toggle()
-                                print("pressed")
-                    weather.fetchWeather(lat: 22.22, lon: 33.33)
-                })
+//                CustomButton(title: "Change day time",myAction:{
+//                                isNight.toggle()
+//                                print("pressed")
+//                    weather.fetchWeather(lat: 22.22, lon: 33.33)
+//                })
             }
         }
     }
@@ -46,7 +48,7 @@ struct ContentView_Previews: PreviewProvider {
     @StateObject static var weather = Weather()
 
     static var previews: some View {
-        ContentView(weather:weather)
+        WeatherView()
     }
 }
 
@@ -94,7 +96,7 @@ struct CityName: View {
 
 struct CurrentWeather: View {
     var iconName:String
-    var temperature: Float
+    var temperature: Double
     var body: some View {
         let formatted = String(format: "%.1f", temperature)
 

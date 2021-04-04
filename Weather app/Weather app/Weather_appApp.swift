@@ -10,17 +10,28 @@ import SwiftUI
 @main
 struct Weather_appApp: App {
     @StateObject var weather = Weather()
+    @StateObject var locations = Locations()
+
     var body: some Scene {
         WindowGroup {
-            TabView{
-                NavigationView{
-                    ContentView(weather:weather)
-                }.tabItem {
-                    Image(systemName:"airplane.circle.fill")
-                    Text("Discover")
-                }
 
-            }.environmentObject(weather)
+//                NavigationView{
+//                    WeatherView(weather:weather)
+//                }.tabItem {
+//                    Image(systemName:"airplane.circle.fill")
+//                    Text("Discover")
+//                }
+            NavigationView{
+                WorldView(locations:locations)
+            }
+            .environmentObject(weather)
+            .tabItem {
+                Image(systemName:"airplane.circle.fill")
+                Text("Locations")
+            }
+            
+
+            
         }
         
     }
