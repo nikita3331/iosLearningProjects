@@ -118,7 +118,6 @@ class Todos :ObservableObject{
         var dummy:[Todo]=[]
 
         for (index,todo) in jsonTodos.arrayValue.enumerated() {
-            print(todo)
             let tit = todo["title"].string!
             let desc = todo["description"].string!
             let category = todo["category"].string!
