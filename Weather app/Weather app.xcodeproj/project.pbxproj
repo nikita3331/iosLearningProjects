@@ -20,6 +20,7 @@
 		1A9CD7BE2619D0DA004E34F8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CD7BD2619D0DA004E34F8 /* Location.swift */; };
 		1A9CD7C12619D73D004E34F8 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CD7C02619D73D004E34F8 /* DiscoverView.swift */; };
 		1AA0380F2618D79600AFD8A3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0380E2618D79600AFD8A3 /* Weather.swift */; };
+		1AEA9FD5261CDB20003DB7D1 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA9FD4261CDB20003DB7D1 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1A9CD7BD2619D0DA004E34F8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1A9CD7C02619D73D004E34F8 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		1AA0380E2618D79600AFD8A3 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		1AEA9FD4261CDB20003DB7D1 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		1A7933062613BFE9007C9FD3 = {
 			isa = PBXGroup;
 			children = (
+				1AEA9FD4261CDB20003DB7D1 /* Package.swift */,
 				1A7933112613BFE9007C9FD3 /* Weather app */,
 				1A7933102613BFE9007C9FD3 /* Products */,
 			);
@@ -175,6 +178,7 @@
 				1AA0380F2618D79600AFD8A3 /* Weather.swift in Sources */,
 				1A9CD7C12619D73D004E34F8 /* DiscoverView.swift in Sources */,
 				1A9CD7BB2619D0CA004E34F8 /* Locations.swift in Sources */,
+				1AEA9FD5261CDB20003DB7D1 /* Package.swift in Sources */,
 				1A7933232614A023007C9FD3 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +317,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.abbitsoft.Weather-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -335,6 +340,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.abbitsoft.Weather-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

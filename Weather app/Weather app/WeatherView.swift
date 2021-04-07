@@ -23,7 +23,7 @@ struct WeatherView: View {
             BackgroundView(isNight: $isNight)
             VStack{
                 CityName(cityName: "Cupertino")
-                CurrentWeather(iconName: "cloud.sun.fill", temperature: weather.myTemperature)
+                CurrentWeather(iconName: "cloud.sun.fill", weather: weather)
                 HStack(spacing:100){
                     //add API call to get weather
                     ForEach(forecasts, id: \.day) {
@@ -96,17 +96,23 @@ struct CityName: View {
 
 struct CurrentWeather: View {
     var iconName:String
-    var temperature: Double
+    var weather: Weather
+    func getTemperature()->String{
+        if(weather.isLoading != false){
+            return String(format: "%.1f", weather.myTemperature)
+        }
+        else{
+            return String("Loading...")
+        }
+    }
     var body: some View {
-        let formatted = String(format: "%.1f", temperature)
-
         VStack(spacing:2){
             Image(systemName: iconName)
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 120)
-            Text("\(formatted)°C" )
+            Text(getTemperature() )
                 .font(.system(size: 70,weight:.medium))
                 .foregroundColor(.white)
         }

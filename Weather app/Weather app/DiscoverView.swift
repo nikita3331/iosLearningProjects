@@ -12,9 +12,17 @@ struct DiscoverView: View {
     let location:Location
     @State private var selection: String? = nil
     @EnvironmentObject var weather: Weather
-    
+    func onButtonPress(){
+        print("entering func")
+        weather.fetchWeather(
+            lat: location.latitude,
+            lon: location.longitude,
+            completion: {print("finished fetching")})
+        selection="A"
+    }
     var body: some View {
         ScrollView{
+            ProgressView()
             Image(location.heroPicture)
                 .resizable()
                 .scaledToFit()
@@ -24,11 +32,8 @@ struct DiscoverView: View {
                 selection: $selection) { EmptyView() }
 
             Button(action: {
-                weather.fetchWeather(
-                    lat: location.latitude,
-                    lon: location.longitude)
-                selection="A"
-                print()
+
+                onButtonPress()
             }, label: {
                 Text("View temperature")
                     .padding(.all,10)
@@ -36,7 +41,6 @@ struct DiscoverView: View {
                     .font(.system(size: 25))
                     .background(Color.blue)
             })
-            
             Text(location.name)
                 .font(.largeTitle)
                 .bold()
