@@ -10,43 +10,52 @@ import SwiftUI
 struct AllTodos: View {
     @EnvironmentObject var todos: Todos
     var pickedId:Int?=nil
-    func onTodoPress(id:Int){
-        todos.setPickedTodo(id:id)
+    func onTodoPress(id:String){
+            todos.setPickedTodo(id:id)
+        
     }
-    func onRemove(id:Int){
+    func onRemove(id:String){
         todos.removeTodo(id:id)
     }
+    
     var body: some View {
-        ZStack{
-            Color.purple.ignoresSafeArea()
-            VStack{
-                Text("All your todos")
-                    .font(.largeTitle)
-                VStack(alignment: .leading, spacing: 0) {
-                    ForEach(todos.todos,id:\.id){
-                        item in TodoItem(todo:item,onPress:onTodoPress,onRemove:onRemove)
-                            
+        GeometryReader { geometry in
+            ZStack{
+                Color.purple.ignoresSafeArea()
+                VStack{
+                    Text("All your todos")
+                        .font(.largeTitle)
+                    VStack(alignment: .leading, spacing: 0) {
+                            ForEach(todos.todos,id:\.id){
+                                item in TodoItem(todo:item,onPress:onTodoPress,onRemove:onRemove)
+                                    
+                            }
                     }
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
             }
         }
         
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @StateObject static var api = API()
+
+    @StateObject static var todos = Todos(authKey: "ddd")
+
     static var previews: some View {
         AllTodos()
-            .environmentObject(Todos())
+            .environmentObject(todos)
     }
 }
 
 struct TodoItem: View {
     var todo:Todo
-    var onPress:(Int)->Void
-    var onRemove:(Int)->Void
-    
+    var onPress:(String)->Void
+    var onRemove:(String)->Void
+
     @ViewBuilder func showImage()-> some View{
         if (todo.picked){
             Button(action: {onRemove(todo.id)}, label: {
@@ -56,6 +65,7 @@ struct TodoItem: View {
                    .padding(.vertical,5)
                     .foregroundColor(Color.red)
             })
+
             
         }
     }
@@ -92,6 +102,8 @@ struct TodoItem: View {
                 .padding(.top,10)
                 .padding(.horizontal,30)
             })
-
+            .onAppear(perform: {
+                print(todo)
+            })
     }
 }

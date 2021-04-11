@@ -11,6 +11,24 @@
         }
       },
       {
+        "package": "iActivityIndicator",
+        "repositoryURL": "https://github.com/MojtabaHs/iActivityIndicator",
+        "state": {
+          "branch": null,
+          "revision": "051ba2db67f019af4b0600c01ba2ca991092daae",
+          "version": "0.4.1"
+        }
+      },
+      {
+        "package": "Neumorphic",
+        "repositoryURL": "https://github.com/costachung/neumorphic",
+        "state": {
+          "branch": null,
+          "revision": "3fa56e844a5e375ff3d38e3c770886bcc949f6f5",
+          "version": "2.0.5"
+        }
+      },
+      {
         "package": "SwiftyJSON",
         "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON",
         "state": {
