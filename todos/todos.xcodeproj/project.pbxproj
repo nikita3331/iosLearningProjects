@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A25877E26243CF9003E8DB5 /* SignupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25877D26243CF9003E8DB5 /* SignupScreen.swift */; };
 		1A93274E2621A22500E66A64 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 1A93274D2621A22500E66A64 /* Neumorphic */; };
 		1A9327CD2622D63300E66A64 /* TotalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9327CC2622D63300E66A64 /* TotalState.swift */; };
 		1A9327D0262324A900E66A64 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9327CF262324A900E66A64 /* LoginScreen.swift */; };
@@ -16,18 +17,17 @@
 		1AEA9FEC261DAF09003DB7D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AEA9FEB261DAF09003DB7D1 /* Preview Assets.xcassets */; };
 		1AEA9FF5261DAFBF003DB7D1 /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA9FF4261DAFBF003DB7D1 /* Todos.swift */; };
 		1AEA9FF9261DDDD8003DB7D1 /* AddTodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA9FF8261DDDD8003DB7D1 /* AddTodos.swift */; };
-		1AEA9FFD261DE9EB003DB7D1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 1AEA9FFC261DE9EB003DB7D1 /* Toast */; };
 		1AEAA001261DEF52003DB7D1 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 1AEAA000261DEF52003DB7D1 /* AlertToast */; };
 		1AEAA004261E0FBA003DB7D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAA003261E0FBA003DB7D1 /* User.swift */; };
 		1AEAA008261E1993003DB7D1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 1AEAA007261E1993003DB7D1 /* SwiftyJSON */; };
 		1AEAA00B261EF5D7003DB7D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAA00A261EF5D7003DB7D1 /* ViewController.swift */; };
 		1AEAA00E261EF665003DB7D1 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAA00D261EF665003DB7D1 /* TabBar.swift */; };
 		1AEAA017261F1055003DB7D1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAA016261F1055003DB7D1 /* API.swift */; };
-		1AEAA024261F18D9003DB7D1 /* iActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 1AEAA023261F18D9003DB7D1 /* iActivityIndicator */; };
 		1AEAA028261F266C003DB7D1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAA027261F266C003DB7D1 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A25877D26243CF9003E8DB5 /* SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreen.swift; sourceTree = "<group>"; };
 		1A9327CC2622D63300E66A64 /* TotalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalState.swift; sourceTree = "<group>"; };
 		1A9327CF262324A900E66A64 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		1AEA9FE1261DAF06003DB7D1 /* todos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,8 +51,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AEAA008261E1993003DB7D1 /* SwiftyJSON in Frameworks */,
-				1AEAA024261F18D9003DB7D1 /* iActivityIndicator in Frameworks */,
-				1AEA9FFD261DE9EB003DB7D1 /* Toast in Frameworks */,
 				1A93274E2621A22500E66A64 /* Neumorphic in Frameworks */,
 				1AEAA001261DEF52003DB7D1 /* AlertToast in Frameworks */,
 			);
@@ -110,6 +108,7 @@
 				1AEA9FF8261DDDD8003DB7D1 /* AddTodos.swift */,
 				1AEAA027261F266C003DB7D1 /* Settings.swift */,
 				1AEA9FE6261DAF06003DB7D1 /* AllTodos.swift */,
+				1A25877D26243CF9003E8DB5 /* SignupScreen.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -131,10 +130,8 @@
 			);
 			name = todos;
 			packageProductDependencies = (
-				1AEA9FFC261DE9EB003DB7D1 /* Toast */,
 				1AEAA000261DEF52003DB7D1 /* AlertToast */,
 				1AEAA007261E1993003DB7D1 /* SwiftyJSON */,
-				1AEAA023261F18D9003DB7D1 /* iActivityIndicator */,
 				1A93274D2621A22500E66A64 /* Neumorphic */,
 			);
 			productName = todos;
@@ -165,10 +162,8 @@
 			);
 			mainGroup = 1AEA9FD8261DAF06003DB7D1;
 			packageReferences = (
-				1AEA9FFB261DE9EB003DB7D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				1AEA9FFF261DEF52003DB7D1 /* XCRemoteSwiftPackageReference "AlertToast" */,
 				1AEAA006261E1993003DB7D1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				1AEAA022261F18D9003DB7D1 /* XCRemoteSwiftPackageReference "iActivityIndicator" */,
 				1A93274C2621A22500E66A64 /* XCRemoteSwiftPackageReference "neumorphic" */,
 			);
 			productRefGroup = 1AEA9FE2261DAF06003DB7D1 /* Products */;
@@ -204,6 +199,7 @@
 				1AEAA004261E0FBA003DB7D1 /* User.swift in Sources */,
 				1AEA9FF9261DDDD8003DB7D1 /* AddTodos.swift in Sources */,
 				1AEAA028261F266C003DB7D1 /* Settings.swift in Sources */,
+				1A25877E26243CF9003E8DB5 /* SignupScreen.swift in Sources */,
 				1AEAA017261F1055003DB7D1 /* API.swift in Sources */,
 				1A9327CD2622D63300E66A64 /* TotalState.swift in Sources */,
 				1A9327D0262324A900E66A64 /* LoginScreen.swift in Sources */,
@@ -406,14 +402,6 @@
 				minimumVersion = 2.0.5;
 			};
 		};
-		1AEA9FFB261DE9EB003DB7D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scalessec/Toast-Swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
 		1AEA9FFF261DEF52003DB7D1 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast.git";
@@ -430,14 +418,6 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		1AEAA022261F18D9003DB7D1 /* XCRemoteSwiftPackageReference "iActivityIndicator" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MojtabaHs/iActivityIndicator";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -445,11 +425,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A93274C2621A22500E66A64 /* XCRemoteSwiftPackageReference "neumorphic" */;
 			productName = Neumorphic;
-		};
-		1AEA9FFC261DE9EB003DB7D1 /* Toast */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1AEA9FFB261DE9EB003DB7D1 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
-			productName = Toast;
 		};
 		1AEAA000261DEF52003DB7D1 /* AlertToast */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -460,11 +435,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1AEAA006261E1993003DB7D1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		1AEAA023261F18D9003DB7D1 /* iActivityIndicator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1AEAA022261F18D9003DB7D1 /* XCRemoteSwiftPackageReference "iActivityIndicator" */;
-			productName = iActivityIndicator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct AllTodos: View {
     @EnvironmentObject var todos: Todos
@@ -21,7 +22,7 @@ struct AllTodos: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack{
-                Color.purple.ignoresSafeArea()
+                Color.Neumorphic.main.ignoresSafeArea()
                 VStack{
                     Text("All your todos")
                         .font(.largeTitle)
@@ -40,16 +41,6 @@ struct AllTodos: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
-    @StateObject static var api = API()
-
-    @StateObject static var todos = Todos(authKey: "ddd")
-
-    static var previews: some View {
-        AllTodos()
-            .environmentObject(todos)
-    }
-}
 
 struct TodoItem: View {
     var todo:Todo
@@ -82,28 +73,36 @@ struct TodoItem: View {
     
     var body: some View {
         var bgColor=todo.picked ? Color.white:Color.green
-        Button(action: {onPress(todo.id)}, label: {
+
+        Button(action: {onPress(todo.id)}) {
+            VStack{
                 VStack{
-                    VStack{
-                        Text(todo.title)
-                            .foregroundColor(.gray)
-                            .font(.title)
-                            .multilineTextAlignment(.leading)
-                            .padding(.horizontal,20)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                        showDesc()
-                        showImage()
-                    }
-                    .padding(.vertical,10)
-                    
+                    Text(todo.title)
+                        .foregroundColor(.gray)
+                        .font(.title)
+                        .multilineTextAlignment(.leading)
+                        .padding(.horizontal,20)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                    showDesc()
+                    showImage()
                 }
-                .background(bgColor)
-                .cornerRadius(10)
-                .padding(.top,10)
-                .padding(.horizontal,30)
-            })
-            .onAppear(perform: {
-                print(todo)
-            })
+            }
+            .cornerRadius(10)
+        }
+        .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+        .padding(.horizontal,30)
+        .padding(.top,20)
+    }
+}
+struct ContentView_Previews: PreviewProvider {
+    @StateObject static var api = API()
+
+    @StateObject static var todos = Todos(authKey: "f15c81b769e895100fbe2fde31534347bf582050")
+    
+
+    static var previews: some View {
+        AllTodos()
+            .environmentObject(todos)
+
     }
 }

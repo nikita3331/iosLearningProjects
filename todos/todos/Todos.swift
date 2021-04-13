@@ -22,7 +22,7 @@ struct LoginResponse:Decodable{
 }
 class Todos :ObservableObject{
     @Published var todos:[Todo]=[]
-    var authKey:String = ""
+    @Published var authKey:String = ""
     var baseUrl:String="https://madsprtest.herokuapp.com/"
     var api=API()
     @Published var isLoading:Bool=false
@@ -48,7 +48,11 @@ class Todos :ObservableObject{
         }
     }
     public func setAuthKey(key:String){
-        self.authKey=key
+        DispatchQueue.main.async {
+            self.authKey=key
+            self.api.setAuthKey(auth: key)
+        }
+
     }
     public func removeTodo(id:String){
         self.isLoading=true
@@ -56,7 +60,6 @@ class Todos :ObservableObject{
         group.enter()
         api.removeTodo(id:id){
             (suc) in
-            print("is removed",suc)
             group.leave()
         }
         group.wait()
@@ -78,7 +81,6 @@ class Todos :ObservableObject{
         group.enter()
         api.addTodo(title: title, desc: desc){
             (suc) in
-            print("is suc",suc)
             group.leave()
         }
         group.wait()
@@ -136,8 +138,10 @@ class Todos :ObservableObject{
         }
     }
     init(authKey: String){
-        print(authKey)
-
+        if !authKey.isEmpty{
+            self.authKey=authKey
+            fetchInitialTodos()
+        }
 
     }
 }

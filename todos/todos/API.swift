@@ -29,6 +29,9 @@ class API:ObservableObject{
             }
         }.resume()
     }
+    public func setAuthKey(auth:String){
+        self.authKey=auth
+    }
     public func removeTodo(id:String,completionBlock: @escaping (String) -> Void){
         let url = URL(string: "\(baseUrl)/todos/removeTodo")!
         var request = URLRequest(url: url)

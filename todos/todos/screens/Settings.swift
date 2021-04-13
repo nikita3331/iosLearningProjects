@@ -7,14 +7,18 @@
 
 import SwiftUI
 import AlertToast
+import Neumorphic
+
 struct Settings: View {
     @EnvironmentObject var todos: Todos
     func handleLogOut(){
-        print("log out")
+        let dummyVal:String=""
+        UserDefaults.standard.set(dummyVal, forKey: "AuthKey")
+        todos.setAuthKey(key: "")
     }
     var body: some View {
         ZStack{
-            Color.purple.ignoresSafeArea()
+            Color.Neumorphic.main.ignoresSafeArea()
             VStack{
                 Text("Settings")
                     .font(.largeTitle)
@@ -24,12 +28,9 @@ struct Settings: View {
                 Button(action: {handleLogOut()}, label: {
                     Text("Log out")
                         .font(.system(size: 40))
-                        .padding(.horizontal,40)
-                        .background(Color.white, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(10.0)
                 })
-                .padding(.top,30)
-                
+                .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
             
@@ -43,7 +44,7 @@ struct Settings: View {
 struct Settings_Previews: PreviewProvider {
     @StateObject static var api = API()
 
-    @StateObject static var todos = Todos(authKey: "dada")
+    @StateObject static var todos = Todos(authKey: "")
 
     static var previews: some View {
         Settings()

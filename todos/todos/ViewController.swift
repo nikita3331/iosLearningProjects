@@ -20,24 +20,24 @@ struct ViewController: View {
     var edgesTop:CGFloat
 
     var body: some View {
-        NavigationView {
-            ZStack{
-                VStack{
-                    CurrentScreen(currentView: self.$currentView)
-                        .padding(.top,edgesTop)
-                    TabBar(currentView: self.$currentView, showModal: self.$showModal)
+            NavigationView {
+                ZStack{
+                    VStack{
+                        CurrentScreen(currentView: self.$currentView)
+                            .padding(.top,edgesTop)
+                        TabBar(currentView: self.$currentView, showModal: self.$showModal)
+                    }
+                    .edgesIgnoringSafeArea(.top)
+                    LoaderView(isVisible:todos.isLoading)
+                        .padding(.bottom,50)
+                    
                 }
-                .edgesIgnoringSafeArea(.top)
-                LoaderView(isVisible:todos.isLoading)
-                    .padding(.bottom,50)
-                
-            }
 
-        }
-        .background(Color(.white))
-        .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: self.$showModal) { AddTodos(isVis:self.$showModal) }
-        .environmentObject(todos)
+            }
+            .background(Color(.white))
+            .navigationViewStyle(StackNavigationViewStyle())
+            .sheet(isPresented: self.$showModal) { AddTodos(isVis:self.$showModal) }
+            .environmentObject(todos)
 
     }
 }

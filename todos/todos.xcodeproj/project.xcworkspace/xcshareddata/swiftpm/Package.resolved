@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "iActivityIndicator",
-        "repositoryURL": "https://github.com/MojtabaHs/iActivityIndicator",
-        "state": {
-          "branch": null,
-          "revision": "051ba2db67f019af4b0600c01ba2ca991092daae",
-          "version": "0.4.1"
-        }
-      },
-      {
         "package": "Neumorphic",
         "repositoryURL": "https://github.com/costachung/neumorphic",
         "state": {
@@ -34,15 +25,6 @@
         "state": {
           "branch": null,
           "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
-          "version": "5.0.1"
-        }
-      },
-      {
-        "package": "Toast",
-        "repositoryURL": "https://github.com/scalessec/Toast-Swift",
-        "state": {
-          "branch": null,
-          "revision": "0c9493eeacb102cc614da385cfaaf475379f4ab4",
           "version": "5.0.1"
         }
       }

@@ -30,6 +30,7 @@ struct AddTodos: View {
             title=""
             description=""
             category=""
+            isVis=false
         }
 
     }
@@ -116,7 +117,6 @@ struct AddTodos: View {
             }
             .toast(isPresenting: $showToast, duration: 1, tapToDismiss: true, alert: {
                 AlertToast(displayMode:.hud,type: .regular, title: toastTitle)
-
             })
 
         }
