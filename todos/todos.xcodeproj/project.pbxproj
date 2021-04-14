@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A25877E26243CF9003E8DB5 /* SignupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25877D26243CF9003E8DB5 /* SignupScreen.swift */; };
+		1A25878726259E6C003E8DB5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25878626259E6C003E8DB5 /* ImagePicker.swift */; };
 		1A93274E2621A22500E66A64 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 1A93274D2621A22500E66A64 /* Neumorphic */; };
 		1A9327CD2622D63300E66A64 /* TotalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9327CC2622D63300E66A64 /* TotalState.swift */; };
 		1A9327D0262324A900E66A64 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9327CF262324A900E66A64 /* LoginScreen.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1A25877D26243CF9003E8DB5 /* SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreen.swift; sourceTree = "<group>"; };
+		1A25878626259E6C003E8DB5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		1A9327CC2622D63300E66A64 /* TotalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalState.swift; sourceTree = "<group>"; };
 		1A9327CF262324A900E66A64 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		1AEA9FE1261DAF06003DB7D1 /* todos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				1A9327CF262324A900E66A64 /* LoginScreen.swift */,
 				1AEA9FF8261DDDD8003DB7D1 /* AddTodos.swift */,
 				1AEAA027261F266C003DB7D1 /* Settings.swift */,
+				1A25878626259E6C003E8DB5 /* ImagePicker.swift */,
 				1AEA9FE6261DAF06003DB7D1 /* AllTodos.swift */,
 				1A25877D26243CF9003E8DB5 /* SignupScreen.swift */,
 			);
@@ -192,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A25878726259E6C003E8DB5 /* ImagePicker.swift in Sources */,
 				1AEAA00B261EF5D7003DB7D1 /* ViewController.swift in Sources */,
 				1AEA9FE7261DAF06003DB7D1 /* AllTodos.swift in Sources */,
 				1AEA9FE5261DAF06003DB7D1 /* todosApp.swift in Sources */,
@@ -341,7 +345,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.abbitsoft.todos;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.abbitsoft.test-todos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.abbitsoft.todos;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.abbitsoft.test-todos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
